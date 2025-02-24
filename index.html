@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação de sistemas distribuídos - JAVA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Programação de sistemas distribuídos - JAVA</h1>
+        
+        <h2>1. Conceitos Básicos e Plataforma Java</h2>
+        <p>Java é uma linguagem de programação de alto nível, orientada a objetos e multiplataforma. Foi desenvolvida para ser portátil e segura, permitindo que aplicações sejam executadas em qualquer sistema que possua a Java Virtual Machine (JVM). Java é amplamente utilizado para aplicações web, móveis e empresariais.</p>
+        <p>O código abaixo mostra um simples programa Java que imprime "Olá, Mundo!":</p>
+        <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
+}
+        </pre>
+
+        <h2>2. Fundamentos da Programação Orientada a Objetos</h2>
+        <p>A Programação Orientada a Objetos (POO) é um paradigma de programação que se baseia no conceito de "objetos", que representam entidades do mundo real. Esses objetos possuem atributos (dados) e métodos (comportamentos). Java adota esse modelo para tornar o código mais modular e reutilizável.</p>
+        <p>O código abaixo mostra a estrutura básica de uma classe e um objeto em Java:</p>
+        <pre>
+class Pessoa {
+    String nome;
+    int idade;
+    
+    void apresentar() {
+        System.out.println("Olá, meu nome é " + nome + " e tenho " + idade + " anos.");
+    }
+}
+        </pre>
+
+        <h2>3. Tipos, Literais, Operadores e Controlo de Fluxo</h2>
+        <p>Java possui vários tipos de dados, operadores e estruturas de controle de fluxo para gerenciar a lógica do programa. Alguns exemplos:</p>
+        <ul>
+            <li><strong>Tipos:</strong> int, double, boolean, char, String.</li>
+            <li><strong>Operadores:</strong> +, -, *, /, %, ==, !=, &&, ||.</li>
+            <li><strong>Estruturas de controle:</strong> if-else, switch, loops (for, while, do-while).</li>
+        </ul>
+        <pre>
+int idade = 20;
+if (idade >= 18) {
+    System.out.println("Maior de idade");
+} else {
+    System.out.println("Menor de idade");
+}
+        </pre>
+
+        <h2>4. Criação de Classes, Objetos, Métodos e Variáveis</h2>
+        <p>Em Java, as classes são usadas para definir o comportamento dos objetos. Cada classe pode ter variáveis de instância e métodos para manipular esses dados.</p>
+        <pre>
+class Carro {
+    String modelo;
+    int ano;
+    
+    void exibirDetalhes() {
+        System.out.println("Modelo: " + modelo + ", Ano: " + ano);
+    }
+}
+        </pre>
+
+        <h2>5. Reutilização com Herança e Composição</h2>
+        <p>A herança permite que uma classe filha herde atributos e métodos de uma classe pai. Já a composição reutiliza funcionalidades incluindo objetos dentro de outras classes.</p>
+        <pre>
+class Animal {
+    void emitirSom() {
+        System.out.println("Som genérico de animal");
+    }
+}
+
+class Cachorro extends Animal {
+    void emitirSom() {
+        System.out.println("Au au!");
+    }
+}
+        </pre>
+
+        <h2>6. Interfaces e Polimorfismo</h2>
+        <p>Interfaces definem um conjunto de métodos que uma classe deve implementar. O polimorfismo permite que métodos tenham comportamentos diferentes dependendo da classe.</p>
+        <pre>
+interface Animal {
+    void fazerSom();
+}
+
+class Gato implements Animal {
+    public void fazerSom() {
+        System.out.println("Miau!");
+    }
+}
+        </pre>
+
+        <h2>7. Classes Internas</h2>
+        <p>Classes internas são utilizadas para melhorar a organização do código e encapsular funcionalidades específicas dentro de uma classe maior.</p>
+        <pre>
+class Externa {
+    int x = 10;
+
+    class Interna {
+        void mostrar() {
+            System.out.println("Valor de x: " + x);
+        }
+    }
+}
+        </pre>
+
+        <h2>8. Pacotes, Encapsulamento e JavaBeans</h2>
+        <p>Os pacotes organizam classes em módulos lógicos. O encapsulamento protege os dados, permitindo acesso apenas por métodos controlados. JavaBeans são classes que seguem um padrão específico para reutilização eficiente.</p>
+        
+        <h2>9. Coleções e Strings</h2>
+        <p>O Java oferece coleções como ArrayList e HashMap para manipulação eficiente de dados, além de classes para manipulação de strings.</p>
+        <pre>
+import java.util.ArrayList;
+ArrayList<String> lista = new ArrayList<>();
+lista.add("Maçã");
+lista.add("Banana");
+System.out.println(lista.get(0));
+        </pre>
+        
+        <h2>10. Aplicações Gráficas em Java</h2>
+        <p>Com a biblioteca Swing, é possível criar interfaces gráficas para aplicações Java.</p>
+        <pre>
+import javax.swing.*;
+JFrame frame = new JFrame("Minha Janela");
+frame.setSize(400, 300);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setVisible(true);
+        </pre>
+        
+        <h2>11. Entrada e Saída (java.io)</h2>
+        <p>A API java.io permite ler e escrever arquivos.</p>
+        <pre>
+import java.io.*;
+BufferedReader leitor = new BufferedReader(new FileReader("texto.txt"));
+String linha;
+while ((linha = leitor.readLine()) != null) {
+    System.out.println(linha);
+}
+leitor.close();
+        </pre>
+        
+        <h2>12. Controlo de Erros e Exceções</h2>
+        <p>Erros podem ser tratados usando blocos try-catch para evitar falhas no programa.</p>
+        <pre>
+try {
+    int resultado = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Erro: divisão por zero!");
+} finally {
+    System.out.println("Execução finalizada.");
+}
+        </pre>
+    </div>
+</body>
+</html>
